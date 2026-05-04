@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools >= 77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "env-config-loader"
+version = "0.1.0"
+description = "Load environment variables from .env files with multi-source merge support."
+readme = "README.md"
+authors = [
+    {name = "jennicaz", email = "jennicazheng@hotmail.com"}
+]
+license = { text = "MIT" }
+keywords = [
+    "environment variables",
+    "deployments",
+    "settings",
+    "env",
+    "envloader",
+    "configurations",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+    "Environment :: Web Environment",
+]
+requires-python = ">=3.10"
+
+[project.urls]
+Source = "https://github.com/jennica-z/env-config-loader"
+
+[project.optional-dependencies]
+cli = [
+    "click>=5.0",
+]
+
+[project.scripts]
+envloader = "envloader.__main__:cli"
+
+[tool.setuptools]
+packages = ["envloader"]
+# package-dir = {"" = "."} 
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+relative_files = true
+source = ["envloader"]
+
+[tool.coverage.paths]
+source = [
+    "envloader",
+    ".tox/*/lib/python*/site-packages/envloader",
+    ".tox/pypy*/site-packages/envloader",
+]
+
+[tool.coverage.report]
+show_missing = true
+omit = ["*/tests/*"]
+exclude_lines = [
+    "if IS_TYPE_CHECKING:",
+    "pragma: no cover",
+]
+
+[tool.mypy]
+check_untyped_defs = true
+ignore_missing_imports = true
