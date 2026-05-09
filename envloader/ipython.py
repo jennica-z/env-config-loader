@@ -5,7 +5,7 @@ from IPython.core.magic_arguments import (
     parse_argstring,
 )  # type: ignore
 
-from .main import find_dotenv, load_config_from_env_file
+from .loader import find_dotenv, load_config_from_env_file
 
 
 @magics_class

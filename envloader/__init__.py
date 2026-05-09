@@ -1,6 +1,6 @@
 from typing import Any, Optional
 
-from .main import envloader_values, find_dotenv, get_key, load_config_from_env_file, set_key, unset_key
+from .loader import dotenv_values, find_dotenv, get_key, load_config_from_env_file, set_key, unset_key
 
 
 def load_ipython_extension(ipython: Any) -> None:

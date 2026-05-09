@@ -17,7 +17,7 @@ except ImportError:
     )
     sys.exit(1)
 
-from .main import envloader_values, set_key, unset_key
+from .loader import dotenv_values, set_key, unset_key
 from .version import __version__
 
 

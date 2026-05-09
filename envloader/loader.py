@@ -427,7 +427,7 @@ def load_config_from_env_file(
         override=override,
         encoding=encoding,
     )
-    return envloader.set_as_environment_variables()
+    return dotenv.set_as_environment_variables()
 
 
 def dotenv_values(
